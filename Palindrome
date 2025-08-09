@@ -1,0 +1,16 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0: # checks if negative
+            return False
+
+        inputNum = x
+        newNum = 0
+        while x>0:
+            newNum = newNum * 10 + x%10  # newNum*10 moves digit to the left while x%10 grabs the last number from X
+            x=x//10 # Floor divison divide by 10 to remove the last digit 
+        return newNum == inputNum # checks if equal, if so return true
+        
